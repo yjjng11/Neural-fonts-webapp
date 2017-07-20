@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- my css -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+
+  <script src="/javascripts/script.js"></script>
+  <script src="/javascripts/imagetracer_v1.2.1.js"></script>
+
+  <title>Neural Fonts</title>
+
+  </head>
+  <body>
+
+
+      <!-- Navigation -->
+      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-main-collapse">
+                      <i class="fa fa-bars"></i>
+                  </button>
+                  <a class="navbar-brand page-scroll" href="https://github.com/periannath/neural-fonts" target="_blank">
+                      <span class="light">Neural Fonts</span>
+                  </a>
+              </div>
+
+              <div class="collapse navbar-collapse navbar-main-collapse ">
+                  <ul class="nav navbar-nav">
+                      <li class="hidden">
+                          <a href="#page-top"></a>
+                      </li>
+                      <li>
+                          <a class="page-scroll" href="#about">About</a>
+                      </li>
+                      <li>
+                          <a class="page-scroll" href="#upload">Upload</a>
+                      </li>
+                      <li>
+                          <a class="page-scroll" href="#parameters">Parameters</a>
+                      </li>
+                      <li>
+                          <a class="page-scroll" href="#generate">Generate</a>
+                      </li>
+                      <li>
+                          <a class="page-scroll" href="#download">Download</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+      <section id="about" class="container content-section">
+        <div class="row">
+
+            <div  class="col-md-8 col-md-offset-2 col-xs-12">
+              <h4>Neural Fonts</h4>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="upload" class="container content-section">
+        <div class="row">
+            <div  class="col-md-8 col-md-offset-2 col-xs-12">
+              <h4>Upload Fonts</h4>
+              <p>이미지 업로드</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="parameters" class="container content-section">
+        <div class="row">
+            <div  class="col-md-8 col-md-offset-2 col-xs-12">
+              <h4>Parameter Adjustment</h4>
+              <img id="img" src="/images/el.png" />
+                <div id="optioncontainer"></div>
+                <div class="btn-group" id="btn_group" role="group">
+                  <button id="trace_btn" class="btn btn-primary">Trace</button>
+                  <button id="undo_btn" class="btn btn-default">Undo</button>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section id="generate" class="container content-section">
+        <div class="row">
+
+            <div  class="col-md-8 col-md-offset-2 col-xs-12">
+              <h4>Test Image Generation</h4>
+              <div id="svgcontainer"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="container content-section">
+        <div class="row">
+
+            <div  class="col-md-8 col-md-offset-2 col-xs-12">
+              <h4>Download</h4>
+                <p>전체 이미지 생성 후 다운로드</p>
+
+          </div>
+        </div>
+      </section>
+
+  </body>
+</html>
