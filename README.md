@@ -2,6 +2,6 @@
 
 How to Use
 
-  >> node app.js
+  node app.js
   
   port # : 3000
