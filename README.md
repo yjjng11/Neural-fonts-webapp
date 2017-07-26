@@ -16,7 +16,7 @@ Technology stack
 
 How to Use
 ----------
-###Installation & Execution
+### Installation & Execution
 1. Install Node.js
 2. Install NPM, if necessary
 3. Install NPM packages
@@ -25,7 +25,7 @@ How to Use
 	$ node app.js
 	Then Neural fonts web app will be available at: localhost:3000
 
-###In web page
+### In web page
 1. Upload fonts image
 2. Adjust parameters
 3. See the generated test image, and you can save the settings if you want
