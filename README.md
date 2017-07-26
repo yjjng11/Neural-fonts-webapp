@@ -23,6 +23,7 @@ How to Use
 	$ npm install
 4. Run
 	$ node app.js
+
 Then Neural fonts web app will be available at: localhost:3000
 
 ### In web page
