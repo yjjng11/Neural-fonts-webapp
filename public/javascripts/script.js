@@ -58,7 +58,7 @@ function trace_image(){
       let svgstr = ImageTracer.imagedataToSVG( imgd, option);
 
       // Appending SVG
-      ImageTracer.appendSVGString( svgstr, 'svgcontainer' );
+      ImageTracer.appendSVGString( svgstr, 'post_image' );
 
       log_to_DOM('tracing time : ' + (new Date() - start_t) + ' ms');
     }
@@ -85,9 +85,15 @@ function create_option(name, min, max, step, value) {
     optionSetting_input.name = name;
     optionSetting_input.addEventListener("change", trace_image);
     optionSetting.appendChild(optionSetting_input);
+    optionSetting.style.cssFloat = 'right';
     option.appendChild(optionSetting);
 
-    document.getElementById('optioncontainer').appendChild(option);
+    if(name=='ltres'||name=='qtres'||name=='scale'||name=='strokewidth'){
+      document.getElementById('optioncontainer').appendChild(option);
+    }
+    else{
+      document.getElementById('optioncontainer2').appendChild(option);
+    }
 }
 
 function onload_init() {
@@ -100,6 +106,10 @@ function onload_init() {
   create_option('blurdelta', 0, 100, 10, 20);
   create_option('lcpr', 0, 10, 1, 0);
   create_option('qcpr', 0, 10, 1, 0);
+  var elem = document.createElement("img");
+  elem.setAttribute("src", "/images/el.png");
+  elem.id='img';
+  document.getElementById("pre_image").appendChild(elem);
   trace_image();
 }
 

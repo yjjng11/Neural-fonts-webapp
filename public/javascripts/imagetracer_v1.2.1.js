@@ -907,7 +907,7 @@ function ImageTracer(){
 			div = document.createElement('div');
 			document.body.appendChild(div);
 		}
-		div.innerHTML += svgstr;
+		div.innerHTML = svgstr;
 	},
 
 	////////////////////////////////////////////////////////////

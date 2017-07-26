@@ -9,8 +9,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
   <!-- my css -->
-  <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css" media="screen">
+      <link rel="stylesheet" href="/stylesheets/custom.min.css">
+
 
   <script src="/javascripts/script.js"></script>
   <script src="/javascripts/imagetracer_v1.2.1.js"></script>
@@ -19,21 +21,57 @@
 
   </head>
   <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">Neural Fonts</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="hidden">
+                <a href="#page-top"></a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#about">About</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#upload">Upload</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#parameters">Parameters</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#generate">Generate</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#download">Download</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
 
 
-      <!-- Navigation -->
-      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-          <div class="container">
+      <!-- Navigation
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
               <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-main-collapse">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                       <i class="fa fa-bars"></i>
                   </button>
-                  <a class="navbar-brand page-scroll" href="https://github.com/periannath/neural-fonts" target="_blank">
+                  <a class="navbar-brand" href="https://github.com/periannath/neural-fonts" target="_blank">
                       <span class="light">Neural Fonts</span>
                   </a>
               </div>
 
-              <div class="collapse navbar-collapse navbar-main-collapse ">
+              <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
                       <li class="hidden">
                           <a href="#page-top"></a>
@@ -56,57 +94,62 @@
                   </ul>
               </div>
           </div>
-      </nav>
-
-      <section id="about" class="container content-section">
-        <div class="row">
-
-            <div  class="col-md-8 col-md-offset-2 col-xs-12">
-              <h4>Neural Fonts</h4>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="upload" class="container content-section">
-        <div class="row">
-            <div  class="col-md-8 col-md-offset-2 col-xs-12">
-              <h4>Upload Fonts</h4>
-              <p>이미지 업로드</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="parameters" class="container content-section">
-        <div class="row">
-            <div  class="col-md-8 col-md-offset-2 col-xs-12">
-              <h4>Parameter Adjustment</h4>
-              <img id="img" src="/images/el.png" />
-                <div id="optioncontainer"></div>
-                <div class="btn-group" id="btn_group" role="group">
-                  <button id="trace_btn" class="btn btn-primary">Trace</button>
-                  <button id="undo_btn" class="btn btn-default">Undo</button>
+      </nav>-->
+      <div class="bs-docs-section clearfix">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-1 col-xs-12">
+                <div class="page-header">
+                  <h1 id="about">Neural Fonts</h1>
                 </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+            <div  class="col-md-8 col-md-offset-1 col-xs-12">
+              <h1 id="upload">Upload Fonts</h1>
+              <h1 id="generate">Test Image Generation</h1>
+              <p>  <input type="file" name="profile"></p>
+              <div id="pre_image"></div>
+              <div id="post_image"></div>
+              <h3 id="parameters">Parameter Adjustment</h3>
+              <div id="optioncontainer"></div>
+              <div id="optioncontainer2"></div>
+              <!--<div class="btn-group" id="btn_group" role="group">
+              <button id="undo_btn" class="btn btn-default">Undo</button>
+            </div>-->
+          </div>
+        </div>
+      </div>
+
+    <!--  <div class="bs-docs-section clearfix">
+        <div class="row">
+            <div  class="col-md-8 col-md-offset-1 col-xs-12">
+              <h1 id="parameters">Parameter Adjustment</h1>
+              <div id="optioncontainer"></div>
+              <div class="btn-group" id="btn_group" role="group">
+                <button id="trace_btn" class="btn btn-primary">Trace</button>
+                <button id="undo_btn" class="btn btn-default">Undo</button>
+              </div>
             </div>
         </div>
-      </section>
+      </div>-->
 
-      <section id="generate" class="container content-section">
+
+      <div class="bs-docs-section clearfix">
         <div class="row">
 
-            <div  class="col-md-8 col-md-offset-2 col-xs-12">
-              <h4>Test Image Generation</h4>
-              <div id="svgcontainer"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="download" class="container content-section">
-        <div class="row">
-
-            <div  class="col-md-8 col-md-offset-2 col-xs-12">
-              <h4>Download</h4>
+            <div  class="col-md-8 col-md-offset-1 col-xs-12">
+              <div id="download_div">
+              <h2 id="download">Download</h2>
                 <p>전체 이미지 생성 후 다운로드</p>
+              </div>
 
           </div>
         </div>
