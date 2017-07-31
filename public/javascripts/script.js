@@ -67,11 +67,12 @@ function trace_image(){
 
 function create_option(name, min, max, step, value) {
     var option = document.createElement('div');
-
+    option.style.padding = "0px 0px 20px 0px";
     var optionName = document.createElement('div');
     var optionName_string = document.createElement('p');
     optionName_string.innerHTML = name;
     optionName.appendChild(optionName_string);
+    optionName.style.cssFloat = 'left';
     option.appendChild(optionName);
 
     var optionSetting = document.createElement('div');
@@ -97,15 +98,15 @@ function create_option(name, min, max, step, value) {
 }
 
 function onload_init() {
-  create_option('ltres', 0, 2, 0.1, 1);
-  create_option('qtres', 0, 2, 0.1, 1);
-  create_option('scale', 1, 10, 1, 1);
-  create_option('strokewidth', 1, 5, 1, 1);
-  create_option('pathomit', 1, 20, 1, 8);
-  create_option('blurradius', 0, 5, 1, 0);
-  create_option('blurdelta', 0, 100, 10, 20);
-  create_option('lcpr', 0, 10, 1, 0);
-  create_option('qcpr', 0, 10, 1, 0);
+  /*create_option('ltres', -100, 100, 0.1, 1);
+  create_option('qtres', -100, 100, 0.1, 1);
+  create_option('scale', -100, 100, 1, 1);
+  create_option('strokewidth', -100, 100, 1, 1);
+  create_option('pathomit', -100, 100, 1, 8);
+  create_option('blurradius',-100, 100, 1, 0);
+  create_option('blurdelta', -100, 100, 10, 20);
+  create_option('lcpr', -100, 100, 1, 0);
+  create_option('qcpr', -100, 100, 1, 0);*/
   var elem = document.createElement("img");
   elem.setAttribute("src", "/images/el.png");
   elem.id='img';

@@ -11,7 +11,9 @@
   <!-- my css -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
   <link rel="stylesheet" href="/stylesheets/bootstrap.css" media="screen">
-      <link rel="stylesheet" href="/stylesheets/custom.min.css">
+  <link rel="stylesheet" href="/stylesheets/custom.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
 
 
   <script src="/javascripts/script.js"></script>
@@ -32,7 +34,7 @@
           </button>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             <li class="hidden">
                 <a href="#page-top"></a>
             </li>
@@ -58,102 +60,70 @@
       </div>
     </div>
 
+    <div id="banner">
+    </div>
 
-      <!-- Navigation
-      <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <i class="fa fa-bars"></i>
-                  </button>
-                  <a class="navbar-brand" href="https://github.com/periannath/neural-fonts" target="_blank">
-                      <span class="light">Neural Fonts</span>
-                  </a>
+            <div id="main_contents">
+              <div id="content_1">
+                <div id="upload">Upload Fonts</div>
+                <p id="input_file">  <input type="file" name="profile"></p>
+                <div id="pre_image"></div>
               </div>
 
-              <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
-                      <li class="hidden">
-                          <a href="#page-top"></a>
-                      </li>
-                      <li>
-                          <a class="page-scroll" href="#about">About</a>
-                      </li>
-                      <li>
-                          <a class="page-scroll" href="#upload">Upload</a>
-                      </li>
-                      <li>
-                          <a class="page-scroll" href="#parameters">Parameters</a>
-                      </li>
-                      <li>
-                          <a class="page-scroll" href="#generate">Generate</a>
-                      </li>
-                      <li>
-                          <a class="page-scroll" href="#download">Download</a>
-                      </li>
-                  </ul>
+              <div id="content_2">
+                <div id="generate">Test Image Generation</div>
+                <div id="post_image"></div>
               </div>
-          </div>
-      </nav>-->
-      <div class="bs-docs-section clearfix">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-1 col-xs-12">
-                <div class="page-header">
-                  <h1 id="about">Neural Fonts</h1>
+
+              <div id="range_all">
+
+              <div id="range_container">
+                <p class="ptag">ltres</p>
+                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                <p class="ptag">ltres</p>
+                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                <p class="ptag">ltres</p>
+                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                <p class="ptag">ltres</p>
+                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                <p class="ptag">ltres</p>
+                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+              </div>
+              <div id="range_container2">
+                <p class="ptag">ltres</p>
+                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                <p class="ptag">ltres</p>
+                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                <p class="ptag">ltres</p>
+                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                <p class="ptag">ltres</p>
+                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                <p class="ptag">ltres</p>
+                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+              </div>
+
+            </div>
+              <div id="option_box">
+                <div class="optioncontainer">
+                  <div id="optioncontainer"></div>
+                </div>
+                <div class="optioncontainer2">
+                  <div id="optioncontainer2"></div>
                 </div>
 
-
-
               </div>
+
+
+          <div id="pg_bar">
+            <div class="progress progress-striped active">
+              <div class="progress-bar  progress-bar-info" style="width: 45%"></div>
             </div>
           </div>
 
-
-
-      <div class="bs-docs-section clearfix">
-        <div class="row">
-            <div  class="col-md-8 col-md-offset-1 col-xs-12">
-              <h1 id="upload">Upload Fonts</h1>
-              <h1 id="generate">Test Image Generation</h1>
-              <p>  <input type="file" name="profile"></p>
-              <div id="pre_image"></div>
-              <div id="post_image"></div>
-              <h3 id="parameters">Parameter Adjustment</h3>
-              <div id="optioncontainer"></div>
-              <div id="optioncontainer2"></div>
-              <!--<div class="btn-group" id="btn_group" role="group">
-              <button id="undo_btn" class="btn btn-default">Undo</button>
-            </div>-->
-          </div>
-        </div>
-      </div>
-
-    <!--  <div class="bs-docs-section clearfix">
-        <div class="row">
-            <div  class="col-md-8 col-md-offset-1 col-xs-12">
-              <h1 id="parameters">Parameter Adjustment</h1>
-              <div id="optioncontainer"></div>
-              <div class="btn-group" id="btn_group" role="group">
-                <button id="trace_btn" class="btn btn-primary">Trace</button>
-                <button id="undo_btn" class="btn btn-default">Undo</button>
-              </div>
-            </div>
-        </div>
-      </div>-->
-
-
-      <div class="bs-docs-section clearfix">
-        <div class="row">
-
-            <div  class="col-md-8 col-md-offset-1 col-xs-12">
               <div id="download_div">
-              <h2 id="download">Download</h2>
+              <p id="download">Download</p>
                 <p>전체 이미지 생성 후 다운로드</p>
               </div>
-
-          </div>
         </div>
-      </section>
-
   </body>
 </html>

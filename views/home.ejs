@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- my css -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css" media="screen">
+  <link rel="stylesheet" href="/stylesheets/custom.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+
+  <script src="/javascripts/script.js"></script>
+  <script src="/javascripts/imagetracer_v1.2.1.js"></script>
+
+  <title>Neural Fonts</title>
+
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">Neural Fonts</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+                <a href="#page-top"></a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#about">About</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#upload">Upload</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#parameters">Parameters</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#generate">Generate</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#download">Download</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+      <!-- Navigation
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <i class="fa fa-bars"></i>
+                  </button>
+                  <a class="navbar-brand" href="https://github.com/periannath/neural-fonts" target="_blank">
+                      <span class="light">Neural Fonts</span>
+                  </a>
+              </div>
+
+              <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                      <li class="hidden">
+                          <a href="#page-top"></a>
+                      </li>
+                      <li>
+                          <a class="page-scroll" href="#about">About</a>
+                      </li>
+                      <li>
+                          <a class="page-scroll" href="#upload">Upload</a>
+                      </li>
+                      <li>
+                          <a class="page-scroll" href="#parameters">Parameters</a>
+                      </li>
+                      <li>
+                          <a class="page-scroll" href="#generate">Generate</a>
+                      </li>
+                      <li>
+                          <a class="page-scroll" href="#download">Download</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>-->
+      <div class="bs-docs-section clearfix">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-1 col-xs-12">
+                <div class="page-header">
+
+                  <div id="banner">
+                  </div>
+
+</div>
+
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+            <div  class="col-md-8 col-md-offset-1 col-xs-12">
+
+                <h1 id="upload">Upload Fonts</h1>
+                <h1 id="generate">Test Image Generation</h1>
+
+              <p id="input_file">  <input type="file" name="profile"></p>
+              <div id="pre_image"></div>
+              <div id="post_image"></div>
+              <div class="container">
+                <div class="optioncontainer">
+                  <div id="optioncontainer"></div>
+                </div>
+                <div class="optioncontainer2">
+                  <div id="optioncontainer2"></div>
+                </div>
+
+              </div>
+              <!--<div class="btn-group" id="btn_group" role="group">
+              <button id="undo_btn" class="btn btn-default">Undo</button>
+            </div>-->
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div  class="col-md-8 col-md-offset-1 col-xs-12">
+            <div class="progress progress-striped active">
+              <div class="progress-bar  progress-bar-info" style="width: 45%"></div>
+            </div>
+          </div>
+        </div>
+
+    <!--  <div class="bs-docs-section clearfix">
+        <div class="row">
+            <div  class="col-md-8 col-md-offset-1 col-xs-12">
+              <h1 id="parameters">Parameter Adjustment</h1>
+              <div id="optioncontainer"></div>
+              <div class="btn-group" id="btn_group" role="group">
+                <button id="trace_btn" class="btn btn-primary">Trace</button>
+                <button id="undo_btn" class="btn btn-default">Undo</button>
+              </div>
+            </div>
+        </div>
+      </div>-->
+
+
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+
+            <div  class="col-md-8 col-md-offset-1 col-xs-12">
+              <div id="download_div">
+              <h2 id="download">Download</h2>
+                <p>전체 이미지 생성 후 다운로드</p>
+              </div>
+
+          </div>
+        </div>
+      </section>
+
+  </body>
+</html>
