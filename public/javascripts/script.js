@@ -60,6 +60,19 @@ function trace_image(){
       // Appending SVG
       ImageTracer.appendSVGString( svgstr, 'post_image' );
 
+      // Load SVG to Canvas
+      /*  var canvas2 = new fabric.Canvas('canvas2');
+      canvas2.backgroundColor = 'rgb(150,150,150)';
+      var path = fabric.loadSVGFromString(svgstr,function(objects, options) {
+        var obj = fabric.util.groupSVGElements(objects, options);
+        obj.scaleToHeight(canvas2.height-10)
+        .set({ left: canvas2.width/2, top: canvas2.height/2 })
+        .setCoords();
+
+        canvas2.add(obj).renderAll();
+});*/
+
+
       log_to_DOM('tracing time : ' + (new Date() - start_t) + ' ms');
     }
   );

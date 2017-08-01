@@ -18,6 +18,7 @@
 
   <script src="/javascripts/script.js"></script>
   <script src="/javascripts/imagetracer_v1.2.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.min.js"></script>
 
   <title>Neural Fonts</title>
 
@@ -61,45 +62,60 @@
     </div>
 
             <div id="main_contents">
-              <div id="content_1">
-                <div id="upload">Upload Fonts Image</div>
-                <p id="input_file">  <input type="file" name="profile"></p>
-                <div id="pre_image"></div>
+              <div id="main_contents_2">
+                <div id="main_left">
+                <div id="content_1">
+                  <div id="upload">Upload Fonts Image</div>
+                  <p id="input_file">  <input type="file" name="profile"></p>
+                  <div id="pre_image"></div>
+                </div>
+
+                <div id="content_2">
+                  <div id="test_generate">Test Image Generation</div>
+                  <div id="post_image"></div>
+                </div>
+
+                <div id="range_all">
+
+                <div id="range_container">
+                  <p class="ptag">ltres</p>
+                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">ltres</p>
+                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">ltres</p>
+                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">ltres</p>
+                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">ltres</p>
+                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                </div>
+                <div id="range_container2">
+                  <p class="ptag">ltres</p>
+                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">ltres</p>
+                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">ltres</p>
+                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">ltres</p>
+                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">ltres</p>
+                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                </div>
+
               </div>
 
-              <div id="content_2">
-                <div id="test_generate">Test Image Generation</div>
-                <div id="post_image"></div>
               </div>
+              <div id="main_right">
+                <div id="history_box">
+                  <div id="history_text">
+                    History
+                  </div>
 
-              <div id="range_all">
-
-              <div id="range_container">
-                <p class="ptag">ltres</p>
-                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                <p class="ptag">ltres</p>
-                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                <p class="ptag">ltres</p>
-                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                <p class="ptag">ltres</p>
-                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                <p class="ptag">ltres</p>
-                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-              </div>
-              <div id="range_container2">
-                <p class="ptag">ltres</p>
-                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                <p class="ptag">ltres</p>
-                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                <p class="ptag">ltres</p>
-                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                <p class="ptag">ltres</p>
-                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                <p class="ptag">ltres</p>
-                <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                </div>
               </div>
 
             </div>
+
               <div id="option_box">
                 <div class="optioncontainer">
                   <div id="optioncontainer"></div>
@@ -109,7 +125,7 @@
                 </div>
 
               </div>
-              <div>
+              <div id="generate_container">
                 <div id="generate">Generate All Images</div>
                 <button class="btn btn-default" id="generate_button">START</button>
               </div>
@@ -123,11 +139,64 @@
 
               <div id="download_div">
               <p id="download">Download</p>
-                <p>전체 이미지 생성 후 다운로드</p>
+              <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+              </button>
               </div>
         </div>
+
+  <!--      <canvas id="canvas2" width=500 height=500></canvas>
+			<div class="convolutionFilters">
+			    <input type="checkbox" data-filter="0">Emboss
+			    <input type="checkbox" data-filter="1">Sharpen
+			    <input type="checkbox" data-filter="2">Edge Enhance
+          <input type="checkbox" data-filter="3">Blur
+			</div>-->
+
   </body>
 </html>
 <script>
 
+/*var convolutionFilters = [
+               new fabric.Image.filters.Convolute({        // emboss
+            	   matrix: [  -2, -1, 0,
+                              -1, 1, 1,
+                              0, 1, 2 ]
+               }),
+               new fabric.Image.filters.Convolute({        // sharpen
+                   matrix: [  0, -1, 0,
+                           -1, 5, -1,
+                           0, -1, 0 ]
+               }),
+
+               new fabric.Image.filters.Convolute({        // edge enhance
+                   matrix: [  -1, -1, -1,
+                           -1, 9, -1,
+                           -1, -1, -1 ]
+               }),
+               new fabric.Image.filters.Convolute({        // edge enhance
+                   matrix: [  1/9, 1/9, 1/9,
+      1/9, 1/9, 1/9,
+      1/9, 1/9, 1/9 ]
+               })
+           ];
+
+var canvas2 = new fabric.Canvas('canvas2');
+fabric.Image.fromURL('/images/inferred_0056.png', function (oImg) {
+    canvas2.add(oImg);
+    canvas2.centerObject(oImg);
+    canvas2.renderAll();
+  }, {"scaleX": 0.50, "scaleY": 0.50});
+
+$(function() {
+    $('.convolutionFilters').on("change", "input", function () {
+        var isChecked = $(this).prop("checked"),
+            filter = $(this).data("filter"),
+            obj = canvas2.getObjects()[0];
+        obj.filters[filter] = isChecked ? convolutionFilters[filter] : null;
+        obj.applyFilters(function () {
+            canvas2.renderAll();
+        });
+    });
+});*/
 </script>
