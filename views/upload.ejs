@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-  <script src="http://malsup.github.com/jquery.form.js"></script>
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-  <!-- my css -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
-  <link rel="stylesheet" href="/stylesheets/bootstrap.css" media="screen">
-  <link rel="stylesheet" href="/stylesheets/custom.min.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="/stylesheets/main.css">
-
-  <title>Neural Fonts</title>
-
+    <% include ../views/partials/head %>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
   </head>
   <body>
+    <% include ../views/partials/nav %>
+
     <script>
       var intervalObj;
       $(document).ready(function() {
@@ -67,40 +55,8 @@
         });
       });
     </script>
-    <div class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="../" class="navbar-brand">Neural Fonts</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="hidden">
-                <a href="#page-top"></a>
-            </li>
-            <li>
-                <a class="page-scroll" href="/about">About</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#upload">Test</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#generate">Generate</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#download">Download</a>
-            </li>
 
-          </ul>
-
-        </div>
-      </div>
-    </div>
-    <div class="container">
+    <div class="container" id="upload_top">
       <div class="row">
         <div class="col-lg-12">
           <h2>Upload your font design</h2>

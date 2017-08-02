@@ -49,6 +49,11 @@ html {height: 100%; overflow-y: scroll;}
 	clear: both;
 }
 
+#start{
+}
+
+#upload_top{
+}
 #optionName{
   float:left;
 }
