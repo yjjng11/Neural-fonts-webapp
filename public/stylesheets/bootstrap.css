@@ -1310,6 +1310,10 @@ small,
 .small {
   font-size: 85%;
 }
+vsmall,
+.vsmall {
+  font-size: 75%;
+}
 mark,
 .mark {
   background-color: #fcf8e3;
