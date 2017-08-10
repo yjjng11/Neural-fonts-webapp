@@ -53,7 +53,7 @@ router.get('/examples', function(req, res, next){
 });
 
 router.get('/download_template', function(req, res){
-  var file = __dirname + '/../public/images/Random_template.pdf';
+  var file = __dirname + '/../public/images/Template.pdf';
   res.download(file);
 });
 
