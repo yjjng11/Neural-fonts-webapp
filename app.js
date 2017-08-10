@@ -56,7 +56,7 @@ var PNGReader = require( __dirname + '/PNGReader' );
 
 fs.readFile(
 
-	__dirname + '/el.png', // Input file path
+	__dirname + '/public/images/bb.png', // Input file path
 
 	function( err, bytes ){
 		if(err){ throw err; }
@@ -70,12 +70,12 @@ fs.readFile(
 			var myImageData = { width:png.width, height:png.height, data:png.pixels };
 
 			// tracing to SVG string
-			var options = { ltres:1  }; // optional
+			var options = {  }; // optional
 			var svgstring = ImageTracer.imagedataToSVG( myImageData, options );
 
 			// writing to file
 			fs.writeFile(
-				__dirname + '/el.svg', // Output file path
+				__dirname + '/public/images/bb.svg', // Output file path
 				svgstring,
 				function(err){ if(err){ throw err; } console.log( __dirname + '/test.svg was saved!' ); }
 			);

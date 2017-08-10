@@ -5,11 +5,9 @@
   <script src="/javascripts/script.js"></script>
   <script src="/javascripts/imagetracer_v1.2.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.min.js"></script>
-  <script src="/javascripts/opentype.min.js"></script>
   </head>
   <body>
     <% include ../views/partials/nav %>
-    
 
             <div id="main_contents">
               <div id="main_contents_2">
@@ -29,26 +27,26 @@
 
                 <div id="range_container">
                   <p class="ptag">ltres</p>
-                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                  <p class="ptag">ltres</p>
-                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                  <p class="ptag">ltres</p>
-                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                  <p class="ptag">ltres</p>
-                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                  <p class="ptag">ltres</p>
-                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <input id="ltres" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">qtres</p>
+                  <input id="qtres" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">scale</p>
+                  <input id="scale" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">strokewidth</p>
+                  <input id="strokewidth" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">pathomit</p>
+                  <input id="pathomit" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
                 </div>
                 <div id="range_container2">
-                  <p class="ptag">ltres</p>
-                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                  <p class="ptag">ltres</p>
-                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                  <p class="ptag">ltres</p>
-                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                  <p class="ptag">ltres</p>
-                  <input class="range_bar" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
-                  <button class="btn btn-default" id="save_button">Save</button>
+                  <p class="ptag">blurradius</p>
+                  <input id="blurradius" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">blurdelta</p>
+                  <input id="blurdelta" type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">-</p>
+                  <input type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <p class="ptag">-</p>
+                  <input type="range" min="0" max="2" step="0.1" value="1" style="width:350px;">
+                  <button class="btn btn-primary" id="save_button">Save</button>
                 </div>
 
               </div>
@@ -64,15 +62,6 @@
               </div>
 
             </div>
-
-              <div id="option_box">
-                <div class="optioncontainer">
-                  <div id="optioncontainer"></div>
-                </div>
-                <div class="optioncontainer2">
-                  <div id="optioncontainer2"></div>
-                </div>
-
               </div>
               <div id="generate_container">
                 <div id="generate">Generate All Images</div>
@@ -132,7 +121,9 @@
       <label>X<input type="range" min="-100" max="100" value="0" oninput="snapXChanged(this)"/><span id="snapX">0</span></label>
       <label>Y<input type="range" min="-100" max="100" value="0" oninput="snapYChanged(this)"/><span id="snapY">0</span></label>
 -->
+  <div id="test_image"></div>
 
+  <% include ../views/partials/footer %>
   </body>
 </html>
 <script type="text/javascript">
