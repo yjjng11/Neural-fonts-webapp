@@ -129,6 +129,17 @@ function onload_init() {
   var history = {};
   var but_count = 0;
   var save_but = document.getElementById('save_button');
+  var default_but = document.getElementById('default_button');
+
+  default_but.addEventListener('click', function(){
+    $('#ltres').val(1);
+    $('#qtres').val(1);
+    $('#strokewidth').val(1);
+    $('#pathomit').val(8);
+    $('#blurradius').val(0);
+    $('#blurdelta').val(10);
+    trace_image();
+  });
 
   save_but.addEventListener('click',function(){
     var history_but = document.createElement('button');
@@ -161,35 +172,6 @@ function onload_init() {
     but_count++;
 
   });
-
-
-  /*ImageTracer.loadImage(
-    document.getElementById('img').src,
-    function(canvas){
-
-      // Get options from DOM elements
-      let option = {};
-      let options = document.getElementsByClassName('OptionSetting');
-      let optionSetting_input = options.getElementsByTagName("input");
-      for (let i = 0; i < optionSetting_input.length; i++) {
-        let input = optionSetting_input[i];
-        option[input.name] = input.value;
-      }
-      option.pal = [{r:0,g:0,b:0,a:255},{r:255,g:255,b:255,a:255}];
-      option.linefilter=true;
-      option.ltres=10;
-
-
-      // Getting ImageData from canvas with the helper function getImgdata().
-      let imgd = ImageTracer.getImgdata( canvas );
-
-      // Synchronous tracing to SVG string
-      let svgstr = ImageTracer.imagedataToSVG( imgd, option );
-
-      // Appending SVG
-      ImageTracer.appendSVGString( svgstr, 'post_image' );
-    }
-  );*/
 }
 
 window.addEventListener('load', onload_init);
