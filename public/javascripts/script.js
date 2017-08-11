@@ -1,4 +1,27 @@
 
+/*$(document).ready(function(){
+  var buttons = {};
+  var but_count = 0;
+  $('#save_button').on('click', function(){
+    var history_but = $('<input type="button" class="btn btn-primary" />');
+    history_but.id=but_count;
+    history_but.value=but_count+1;
+    $('#history_box').append(history_but);
+    //$('#'+history_but.id).html(but_count+1);
+
+    //var b = document.getElementById(but_count);
+    history_but.addEventListener("click", function(){alert('dfdf')});
+    but_count++;
+
+
+  });
+
+
+  //$('#'+but_count).bind('click', function(){
+  //  alert('dfs');
+  //});
+});*/
+
 function log_to_DOM (str) {
   var elem = document.createElement('div');
   elem.innerHTML = str;
@@ -33,6 +56,8 @@ function trace_image(){
 
       // Appending SVG
       ImageTracer.appendSVGString( svgstr, 'post_image' );
+      console.log(svgstr);
+      console.log(svgstr.length);
 
       // Load SVG to Canvas
       /*  var canvas2 = new fabric.Canvas('canvas2');
@@ -91,7 +116,6 @@ function onload_init() {
 
   create_option('ltres', 0, 10, 0.1, 1);
   create_option('qtres', 0, 10, 0.1, 1);
-  create_option('scale',0, 2, 0.1, 1);
   create_option('strokewidth', 0, 5, 0.1, 1);
   create_option('pathomit', 0, 10, 1, 8);
   create_option('blurradius',1, 5, 1, 0);
@@ -101,6 +125,43 @@ function onload_init() {
   elem.id='img';
   document.getElementById("pre_image").appendChild(elem);
   trace_image();
+
+  var history = {};
+  var but_count = 0;
+  var save_but = document.getElementById('save_button');
+
+  save_but.addEventListener('click',function(){
+    var history_but = document.createElement('button');
+    var history_box = document.getElementById('history_box');
+    var date = new Date();
+    var time = document.createElement('p');
+
+    time.innerHTML = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+
+    history_but.id = but_count;
+    history_but.className ='btn btn-success btn-sm';
+    history_but.innerHTML = but_count+1;
+
+    history[but_count] = {ltres:$('#ltres').val(), qtres:$('#qtres').val(), strokewidth:$('#strokewidth').val(),
+                          pathomit:$('#pathomit').val(), blurradius:$('#blurradius').val(), blurdelta:$('#blurdelta').val()};
+
+    history_box.appendChild(history_but);
+    history_box.appendChild(time);
+
+    history_but.addEventListener("click", function(){
+      $('#ltres').val(history[this.id].ltres);
+      $('#qtres').val(history[this.id].qtres);
+      $('#strokewidth').val(history[this.id].strokewidth);
+      $('#pathomit').val(history[this.id].pathomit);
+      $('#blurradius').val(history[this.id].blurradius);
+      $('#blurdelta').val(history[this.id].blurdelta);
+      trace_image();
+    });
+
+    but_count++;
+
+  });
+
 
   /*ImageTracer.loadImage(
     document.getElementById('img').src,

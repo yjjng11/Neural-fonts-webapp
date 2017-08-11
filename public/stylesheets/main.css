@@ -150,6 +150,12 @@ p{
 	height: 550px;
 	border: 1px solid gray;
 	display: inline-block;
+	overflow: scroll;
+}
+.btn-sm{
+	padding: 2px 40px;
+	color: white;
+	margin-top: 4px;
 }
 #history_text{
 	text-align: center;
@@ -166,13 +172,12 @@ p{
 	text-align: right;
 }
 #range_all{
-	text-align: right;
-	margin-top: 40px;
+
+		margin-top: 40px;
 
 	display: inline-block;
 }
 #range_container{
-
 	text-align: center;
 	display: inline-block;
 }
