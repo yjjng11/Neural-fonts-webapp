@@ -1,26 +1,19 @@
 
-/*$(document).ready(function(){
-  var buttons = {};
-  var but_count = 0;
-  $('#save_button').on('click', function(){
-    var history_but = $('<input type="button" class="btn btn-primary" />');
-    history_but.id=but_count;
-    history_but.value=but_count+1;
-    $('#history_box').append(history_but);
-    //$('#'+history_but.id).html(but_count+1);
+function make_svg_font (svgstring){
 
-    //var b = document.getElementById(but_count);
-    history_but.addEventListener("click", function(){alert('dfdf')});
-    but_count++;
-
-
+  $("#generate_button").click(function(){
+    $.ajax({
+      type: 'POST',
+      url:'/generate',
+      dataType:"json",
+      async:true,
+      data:{
+        svgstring:svgstring
+      },
+    });
   });
 
-
-  //$('#'+but_count).bind('click', function(){
-  //  alert('dfs');
-  //});
-});*/
+}
 
 function log_to_DOM (str) {
   var elem = document.createElement('div');
@@ -30,6 +23,7 @@ function log_to_DOM (str) {
 
 function trace_image(){
 
+  var svgstring;
   // ImageData can be traced to an SVG string synchronously.
   ImageTracer.loadImage(
     document.getElementById('img').src,
@@ -52,12 +46,13 @@ function trace_image(){
       let imgd = ImageTracer.getImgdata( canvas );
 
       // Synchronous tracing to SVG string
-      let svgstr = ImageTracer.imagedataToSVG( imgd, option);
-
+      option.dstring = "";
+      var svgstr = ImageTracer.imagedataToSVG( imgd, option);
+      var dstring = option.dstring;
+      svgstring = dstring;
+      make_svg_font(svgstr);
       // Appending SVG
       ImageTracer.appendSVGString( svgstr, 'post_image' );
-      console.log(svgstr);
-      console.log(svgstr.length);
 
       // Load SVG to Canvas
       /*  var canvas2 = new fabric.Canvas('canvas2');
@@ -121,11 +116,10 @@ function onload_init() {
   create_option('blurradius',1, 5, 1, 0);
   create_option('blurdelta', -100, 100, 10, 10);
   var elem = document.createElement("img");
-  elem.setAttribute("src", "/images/bb.png");
+  elem.setAttribute("src", "/images/bb2.png");
   elem.id='img';
   document.getElementById("pre_image").appendChild(elem);
   trace_image();
-
   var history = {};
   var but_count = 0;
   var save_but = document.getElementById('save_button');
@@ -145,12 +139,13 @@ function onload_init() {
     var history_but = document.createElement('button');
     var history_box = document.getElementById('history_box');
     var date = new Date();
-    var time = document.createElement('p');
+    var time = document.createElement('span');
 
     time.innerHTML = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+    time.className = 'label label-history'
 
     history_but.id = but_count;
-    history_but.className ='btn btn-success btn-sm';
+    history_but.className ='btn btn-info btn-history';
     history_but.innerHTML = but_count+1;
 
     history[but_count] = {ltres:$('#ltres').val(), qtres:$('#qtres').val(), strokewidth:$('#strokewidth').val(),

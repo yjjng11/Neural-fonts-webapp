@@ -152,10 +152,16 @@ p{
 	display: inline-block;
 	overflow: scroll;
 }
-.btn-sm{
-	padding: 2px 40px;
-	color: white;
-	margin-top: 4px;
+.btn-history{
+	padding: 0px 30px;
+	margin-top: 10px;
+	font-size: 12px;
+}
+.label-history{
+	border: 1px solid #033c73;
+	color: #033c73;
+	padding: 0px 5px;;
+
 }
 #history_text{
 	text-align: center;

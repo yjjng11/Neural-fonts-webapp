@@ -14,6 +14,11 @@
     "fabric": "^2.0.0-beta.4",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
-    "multer": "1.1.0"
+    "multer": "1.1.0",
+    "svg2ttf": "4.1.0"
+  },
+  "devDependencies": {
+    "svgicons2svgfont": "^6.0.0",
+    "webfont": "^7.1.4"
   }
 }

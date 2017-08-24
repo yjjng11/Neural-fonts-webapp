@@ -740,8 +740,6 @@ function ImageTracer(){
 
 		// Starting path element
 		var strddd = '<path '+desc+colorstr+'d="';
-
-		if(colorstr != null){
 		// Creating non-hole path string
 		if( options.roundcoords === -1 ){
 			str += 'M '+ smp.segments[0].x1 * options.scale +' '+ smp.segments[0].y1 * options.scale +' ';
@@ -805,16 +803,11 @@ function ImageTracer(){
 			str += 'Z '; // Close path
 
 		}// End of holepath check
-		str += '" />';
-	}
-		//options.dstring += " " + str;
-		//if(colorstr == null)
-		else{
-			strddd = '';
-			str = strddd+str;
+options.dstring += " " + str;
+str = strddd+str;
 		// Closing path element
-		}
-		str = strddd+str;
+		str += '" />';
+
 		// Rendering control points
 		if(options.lcpr || options.qcpr){
 			for(pcnt=0; pcnt<smp.segments.length; pcnt++){
@@ -897,12 +890,7 @@ function ImageTracer(){
 
 	// Convert color object to SVG color string
 	this.tosvgcolorstr = function(c, options){
-		if(c.r == 250 && c.g == 250 && c.b == 250)
-			return null
-		else {
-			return 'fill="rgb('+c.r+','+c.g+','+c.b+')" stroke="rgb('+c.r+','+c.g+','+c.b+')" stroke-width="'+options.strokewidth+'" opacity="'+c.a/255.0+'" ';
-
-		}
+		return 'fill="rgb('+c.r+','+c.g+','+c.b+')" stroke="rgb('+c.r+','+c.g+','+c.b+')" stroke-width="'+options.strokewidth+'" opacity="'+c.a/255.0+'" ';
 	},
 
 	// Helper function: Appending an <svg> element to a container from an svgstring
