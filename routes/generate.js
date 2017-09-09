@@ -13,13 +13,13 @@ router.post("/", function(req, res){
   var svgstring = req.body.svgstring;
 
   fs.writeFile(
-        './svg/finaltest.svg', // Output file pathj
+        './svg/test5.svg', // Output file pathj
         svgstring,
         function(err){
           if(err){ throw err; }
-
+           console.log( __dirname + '/test.svg was saved!' );
             // Setting the font destination
-            fontStream.pipe(fs.createWriteStream( './svg_fonts/font_final2.svg'))
+        /*    fontStream.pipe(fs.createWriteStream( './svg_fonts/font_final2.svg'))
               .on('finish',function() {
                 var ttf = svg2ttf(fs.readFileSync( './svg_fonts/font_final2.svg', 'utf8'), {});
                 fs.writeFileSync('./ttf_fonts/testfont_final2.ttf', new Buffer(ttf.buffer));
@@ -51,11 +51,11 @@ router.post("/", function(req, res){
             fontStream.write(glyph3);*/
 
             // Do not forget to end the stream
-            fontStream.end();
+          //  fontStream.end();
         }
       );
 
-
+      res.send("success");
 });
 
 module.exports = router;

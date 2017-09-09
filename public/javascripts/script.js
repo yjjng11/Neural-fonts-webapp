@@ -47,6 +47,7 @@ function trace_image(){
 
       // Synchronous tracing to SVG string
       option.dstring = "";
+      option.scale = 1/4;
       var svgstr = ImageTracer.imagedataToSVG( imgd, option);
       var dstring = option.dstring;
       svgstring = dstring;
@@ -73,17 +74,6 @@ function trace_image(){
 }
 
 function create_option(name, min, max, step, value) {
-    //var option = document.createElement('div');
-    //option.style.padding = "0px 0px 20px 0px";
-    //var optionName = document.createElement('div');
-    //var optionName_string = document.createElement('p');
-    //optionName_string.innerHTML = name;
-    //optionName.appendChild(optionName_string);
-    //optionName.style.cssFloat = 'left';
-    //option.appendChild(optionName);
-
-    //var optionSetting = document.createElement('div');
-    //optionSetting.id = 'OptionSetting';
     var optionSetting_input = document.getElementById(name);
     optionSetting_input.class = 'OptionSetting_input';
     optionSetting_input.type = 'range';
@@ -93,18 +83,12 @@ function create_option(name, min, max, step, value) {
     optionSetting_input.value = value;
     optionSetting_input.name = name;
     optionSetting_input.addEventListener("change", trace_image);
-    //optionSetting.appendChild(optionSetting_input);
-    //optionSetting.style.cssFloat = 'right';
-    //option.appendChild(optionSetting);
+}
 
-    //document.getElementById('optioncontainer').appendChild(option);
+function make_canvas(){
 
-  /*  if(name=='ltres'||name=='qtres'||name=='scale'||name=='strokewidth'){
-      document.getElementById('optioncontainer').appendChild(option);
-    }
-    else{
-      document.getElementById('optioncontainer2').appendChild(option);
-    }*/
+
+
 }
 
 function onload_init() {
@@ -115,10 +99,12 @@ function onload_init() {
   create_option('pathomit', 0, 10, 1, 8);
   create_option('blurradius',1, 5, 1, 0);
   create_option('blurdelta', -100, 100, 10, 10);
+
   var elem = document.createElement("img");
-  elem.setAttribute("src", "/images/bb2.png");
+  elem.setAttribute("src", "/images/test.png");
   elem.id='img';
   document.getElementById("pre_image").appendChild(elem);
+
   trace_image();
   var history = {};
   var but_count = 0;

@@ -45,11 +45,14 @@ table {
 
 body {height: 100%; width: 100%; margin: 0; padding: 0;}
 html {height: 100%; overflow-y: scroll;}
+
+footer { background-color: #F5F5F5; }
 .clearfix{
 	clear: both;
 }
 
-#start{
+#upload_container{
+	text-align: center;
 }
 
 #upload_top{
@@ -76,7 +79,6 @@ html {height: 100%; overflow-y: scroll;}
 		font-weight: 600;
 }
 #main_contents{
-	background-color: #F5F5F5;
   width: 100%;
 	text-align: center;
   padding-top: 40px;
@@ -173,7 +175,6 @@ p{
 	border-color: gray;
 }
 .range_bar{
-	background-color: #F5F5F5;
 	display: inline-block;
 	text-align: right;
 }
@@ -225,12 +226,10 @@ display: inline-block;
 }
 #pg_bar{
 	text-align: center;
-	background-color: #F5F5F5;
 }
 #download_div{
 	margin-top:4%;
 	padding-bottom: 6%;
-	background-color: #F5F5F5;
 }
 #download{
 	font-size: 30px;

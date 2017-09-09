@@ -1028,10 +1028,11 @@ function ImageTracer(){
 		img.src = url;
 		img.onload = function(){
 			var canvas = document.createElement('canvas');
-			canvas.width = img.width;
-			canvas.height = img.height;
+			canvas.width = img.width*4;
+			canvas.height = img.height*4;
 			var context = canvas.getContext('2d');
-			context.drawImage(img,0,0);
+			context.drawImage(img,0,0, img.width,    img.height,     // source rectangle
+                   0, 0, canvas.width, canvas.height);
 			callback(canvas);
 		};
 	},

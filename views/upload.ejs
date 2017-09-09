@@ -56,28 +56,27 @@
       });
     </script>
 
-    <div class="container" id="upload_top">
+    <div id="upload_container">
+    <div class="container" id="upload_top" style="padding-top: 70px">
       <div class="row">
         <div class="col-lg-12">
-          <h2>Upload your font design</h2>
-          <p> This page is temporary </p>
+          <h2 style="font-size: 40px">Upload your font design</h2>
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container" style="padding-top: 70px">
       <div class="row">
         <div class="col-lg-12">
           <form id="uploadForm"
                 enctype="multipart/form-data">
-            <input type="file" name="fontPhoto" multiple/>
-            <input type="submit" value="Upload Image" name="submit"/>
-            <input type="text" id="random" name="random"><br>
+            <center><input type="file" class="btn btn-default" name="fontPhoto" multiple/></center>
+            <center><input style="margin-top: 20px" type="submit" class="btn btn-primary" value="Upload Image" name="submit"/></center>
             <span id = "status"></span>
           </form>
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container" style="padding-top: 50px; padding-bottom: 100px"">
       <div class="row">
         <div class="col-lg-12">
           <div id="pg_bar">
@@ -87,6 +86,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
     <% include ../views/partials/footer %>
   </body>
