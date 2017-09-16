@@ -7,29 +7,28 @@ var fontStream = svgicons2svgfont({
   fontName: 'myfont'
 });
 
-
 router.post("/", function(req, res){
 
   var svgstring = req.body.svgstring;
 
   fs.writeFile(
-        './svg/test5.svg', // Output file pathj
+        './svg/ss.svg', // Output file pathj
         svgstring,
         function(err){
           if(err){ throw err; }
-           console.log( __dirname + '/test.svg was saved!' );
+           console.log( __dirname + '/ss.svg was saved!' );
             // Setting the font destination
-        /*    fontStream.pipe(fs.createWriteStream( './svg_fonts/font_final2.svg'))
+            fontStream.pipe(fs.createWriteStream( './svg_fonts/font_ss.svg'))
               .on('finish',function() {
-                var ttf = svg2ttf(fs.readFileSync( './svg_fonts/font_final2.svg', 'utf8'), {});
-                fs.writeFileSync('./ttf_fonts/testfont_final2.ttf', new Buffer(ttf.buffer));
+                var ttf = svg2ttf(fs.readFileSync( './svg_fonts/font_ss.svg', 'utf8'), {});
+                fs.writeFileSync('./ttf_fonts/testfont_ss.ttf', new Buffer(ttf.buffer));
               })
               .on('error',function(err) {
                 console.log(err);
               });
 
             // Writing glyphs
-            var glyph1 = fs.createReadStream('./svg/finaltest.svg');
+            var glyph1 = fs.createReadStream('./svg/ss.svg');
             glyph1.metadata = {
               unicode: ['다'],
               name: 'icon1'
@@ -51,7 +50,7 @@ router.post("/", function(req, res){
             fontStream.write(glyph3);*/
 
             // Do not forget to end the stream
-          //  fontStream.end();
+            fontStream.end();
         }
       );
 

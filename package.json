@@ -7,14 +7,15 @@
   },
   "dependencies": {
     "body-parser": "~1.17.1",
+    "child_process": "^1.0.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "ejs": "~2.5.6",
     "express": "~4.15.2",
     "fabric": "^2.0.0-beta.4",
     "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2",
     "multer": "1.1.0",
+    "serve-favicon": "~2.4.2",
     "svg2ttf": "4.1.0"
   },
   "devDependencies": {

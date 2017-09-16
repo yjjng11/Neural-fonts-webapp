@@ -11,6 +11,8 @@ function make_svg_font (svgstring){
         svgstring:svgstring
       },
     });
+
+
   });
 
 }
@@ -68,7 +70,7 @@ function trace_image(){
 });*/
 
 
-      log_to_DOM('tracing time : ' + (new Date() - start_t) + ' ms');
+     // log_to_DOM('tracing time : ' + (new Date() - start_t) + ' ms');
     }
   );
 }
@@ -85,23 +87,17 @@ function create_option(name, min, max, step, value) {
     optionSetting_input.addEventListener("change", trace_image);
 }
 
-function make_canvas(){
-
-
-
-}
-
 function onload_init() {
 
-  create_option('ltres', 0, 10, 0.1, 1);
+  create_option('ltres', 0, 10, 0.1, 5);
   create_option('qtres', 0, 10, 0.1, 1);
-  create_option('strokewidth', 0, 5, 0.1, 1);
+  create_option('strokewidth', 0, 5, 0.1, 0.15);
   create_option('pathomit', 0, 10, 1, 8);
   create_option('blurradius',1, 5, 1, 0);
   create_option('blurdelta', -100, 100, 10, 10);
 
   var elem = document.createElement("img");
-  elem.setAttribute("src", "/images/test.png");
+  elem.setAttribute("src", "/images/inferred_0063.png");
   elem.id='img';
   document.getElementById("pre_image").appendChild(elem);
 
