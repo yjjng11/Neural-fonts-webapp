@@ -48,19 +48,19 @@ router.post('/train',function(req,res){
   logs_dir = root_dir + "/logs";
   result_dir = root_dir + "/result";
 
-  execSync('mkdir -p zi2zi/' + root_dir);         // root directory
-  execSync('mkdir -p zi2zi/' + scan_dir);         // scanned image directory
-  execSync('mkdir -p zi2zi/' + crop_dir);         // cropped image directory
-  execSync('mkdir -p zi2zi/' + data_dir);         // data directory
-  execSync('mkdir -p zi2zi/' + image_dir);        // image data directory
-  execSync('mkdir -p zi2zi/' + logs_dir);         // log data directory
-  execSync('mkdir -p zi2zi/' + result_dir);       // result data directory
-  fs.closeSync(fs.openSync('zi2zi/' + logs_dir + '/progress', 'w'));    // create an empty file to check progress
-  execSync('cp -r zi2zi/binary/baseline/checkpoint zi2zi/' + root_dir + "/.");    // model directory (copy baseline model)
+  execSync('mkdir -p neural-fonts/' + root_dir);         // root directory
+  execSync('mkdir -p neural-fonts/' + scan_dir);         // scanned image directory
+  execSync('mkdir -p neural-fonts/' + crop_dir);         // cropped image directory
+  execSync('mkdir -p neural-fonts/' + data_dir);         // data directory
+  execSync('mkdir -p neural-fonts/' + image_dir);        // image data directory
+  execSync('mkdir -p neural-fonts/' + logs_dir);         // log data directory
+  execSync('mkdir -p neural-fonts/' + result_dir);       // result data directory
+  fs.closeSync(fs.openSync('neural-fonts/' + logs_dir + '/progress', 'w'));    // create an empty file to check progress
+  execSync('cp -r neural-fonts/binary/baseline/checkpoint neural-fonts/' + root_dir + "/.");    // model directory (copy baseline model)
 
   var storage = multer.diskStorage({
     destination: function (req, file, callback) {
-      callback(null, 'zi2zi/' + scan_dir);
+      callback(null, 'neural-fonts/' + scan_dir);
     },
     filename: function (req, file, callback) {
       callback(null, file.originalname);
@@ -134,7 +134,7 @@ router.post('/progress',function(req,res){
 
   // On training. start 2nd training when the 1st is done.
   if (training_progress.length >= 4) {
-    let data = fs.readFileSync('zi2zi/' + logs_dir + '/progress', {encoding:'utf8'});
+    let data = fs.readFileSync('neural-fonts/' + logs_dir + '/progress', {encoding:'utf8'});
     var count = (data.match(/Done/g) || []).length;
     if (count == 1 && training_count == 0) {
       console.log('1st Training Done');
@@ -166,7 +166,7 @@ router.post('/progress',function(req,res){
 });
 
 router.post('/current_dir',function(req,res){
-  let list = fs.readdirSync('zi2zi/' + result_dir);
+  let list = fs.readdirSync('neural-fonts/' + result_dir);
   res.json({'root_dir':root_dir, 'sample_img_paths':list.slice(0,9)});
 });
 module.exports = router;
