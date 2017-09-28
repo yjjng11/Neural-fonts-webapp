@@ -4,8 +4,6 @@
   <% include ../views/partials/head %>
   <script src="/javascripts/script.js"></script>
   <script src="/javascripts/imagetracer_v1.2.1.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.min.js"></script>
-  <script src="/fonts/font_ss.svg"></script>
   </head>
   <body>
     <% include ../views/partials/nav %>
@@ -14,13 +12,12 @@
               <div id="main_contents_2">
                 <div id="main_left">
                 <div id="content_1">
-                  <div id="upload">Upload Fonts Image</div>
-                  <p id="input_file">  <input type="file" name="profile"></p>
+                  <div id="test_generate">Generated Fonts Image</div>
                   <div id="pre_image"></div>
                 </div>
 
                 <div id="content_2">
-                  <div id="test_generate">Test Image Generation</div>
+                  <div id="test_generate">Vectorized Fonts Image</div>
                   <div id="post_image"></div>
                 </div>
 
@@ -59,179 +56,15 @@
 
             </div>
               </div>
-              <div id="generate_container">
-                <div id="generate">Generate All Images</div>
-
-                  <button type="submit" class="btn btn-default" id="generate_button">START</button>
-
-              </div>
-
-
-          <div id="pg_bar">
-            <div class="progress progress-striped active">
-              <div class="progress-bar  progress-bar-info" style="width: 45%"></div>
-            </div>
-          </div>
 
               <div id="download_div">
               <p id="download">Download</p>
-              <button type="button" class="btn btn-default">
+              <a class="btn btn-default" href='/download_ttf'>
                 <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
-              </button>
+                </a>
               </div>
         </div>
-
-<!--        <canvas id="canvas2" width="500" height="500"></canvas>
-			<div class="convolutionFilters">
-			    <input type="checkbox" data-filter="0">Emboss
-			    <input type="checkbox" data-filter="1">Sharpen
-			    <input type="checkbox" data-filter="2">Edge Enhance
-          <input type="checkbox" data-filter="3">Blur
-			</div>
-      <button type="button" id="btn"> Export and Import SVG</button>
-      <button type="button" id="btn_edit"> Export and Import JSON </button>
-      <p>Export to SVG</p>
-      <div id-"svg-tag"></div>
-      <p>Import from SVG</p>
-      <canvas id="canvas-svg" width="500" height="500"></canvas>
-      <p>Import from JSON</p>
-      <canvas id="canvas" width="500" height="500"></canvas>-->
-
-<!--      <input id="file" type="file">
-   <span class="info" id="font-name">Fira Sans</span>
-   <canvas id="preview" width="940" height="300" class="text"></canvas>
-   <div id="message"></div>
-   <input type="text" class="text-input" onkeyup="renderText()" value="Hello, World!"
-          autofocus id="textField">
-   <label>Font Size<input type="range" min="6" max="500" step="2" value="150" id="font-size-range" autocomplete="off"><span id="fontSize">150</span></label>
-   <label><input type="checkbox" onchange="drawPointsChanged(this)" checked="checked">Draw Points</label>
-   <label><input type="checkbox" onchange="drawMetricsChanged(this)">Draw Metrics</label>
-   <label><input type="checkbox" onchange="kerningChanged(this)" checked="checked">Kerning</label>
-   <label><input type="checkbox" onchange="ligaturesChanged(this)" checked="checked">Ligatures</label>
-   <label id="hinting-label" class="disabled"><input id="hinting-checkbox" type="checkbox" onchange="hintingChanged(this)" disabled="true">Hinting</label>
-
-   <hr>
-
-
-      <canvas id="snap" width="940" height="300" class="text"></canvas>
-      <label>Strength <input type="range" min="0" max="100" value="80" oninput="snapStrengthChanged(this)"/><span id="snapStrength">80</span></label>
-      <label>Distance<input type="range" min="1" max="100" value="53" oninput="snapDistanceChanged(this)"/><span id="snapDistance">53</span></label>
-      <label>X<input type="range" min="-100" max="100" value="0" oninput="snapXChanged(this)"/><span id="snapX">0</span></label>
-      <label>Y<input type="range" min="-100" max="100" value="0" oninput="snapYChanged(this)"/><span id="snapY">0</span></label>
--->
-  <div id="test_image"></div>
 
   <% include ../views/partials/footer %>
   </body>
 </html>
-<script type="text/javascript">
-
-// Fabric js
-/*var canvas = new fabric.Canvas('canvas2');
-var cv = new fabric.Canvas('cv');
-
-
-$('#btn').click(function(){
-   var trsvg = canvas.toSVG();
-   var trsvg_cv = cv.toSVG();
-   var canvas_svg = new fabric.Canvas('canvas-svg');
-   $('#svg-tag').html(trsvg);
-     //alert(JSON.stringify(trsvg));
-  	//alert(JSON.stringify(canvas.toDatalessJSON()));
-   var stringa = canvas.toJSON;
-
-   fabric.loadSVGFromString( trsvg , function (objects, options) {
-     var obj = fabric.util.groupSVGElements(objects, options);
-     canvas_svg.add(obj).centerObject(obj);
-     obj.setCoords();
-     canvas_svg.calcOffset();
-     canvas_svg.renderAll();
-      //alert('sss');
-   });
-
-});
-$('#btn_edit').click(function(){
-var canvas_ = new fabric.Canvas('canvas');
-console.log('Click Edit');
-
-
-//JSON DATA
-var json_data = JSON.stringify(canvas.toDatalessJSON());
-console.log(json_data);
-//LOAD JSON DATA
-
-canvas_.loadFromJSON(JSON.parse(json_data), function(obj) {
-  canvas_.renderAll();
-   console.log(' this is a callback. invoked when canvas is loaded!xxx ');
-
-  canvas_.forEachObject(function(obj){
-    console.log(obj.name);
-
-    if(obj.name === 'recta'){
-      obj.set({
-                left: 100,
-                top:200,
-                height: 700,
-                width: 700,
-                scaleX: .35,
-                scaleY:.35,
-        lockScalingY: .35
-            });
-
-      canvas_.add(obj);
-    }
-
-  });
-
-
-});
-
-
-});*/
-
-/*var convolutionFilters = [
-               new fabric.Image.filters.Convolute({        // emboss
-            	   matrix: [  -2, -1, 0,
-                              -1, 1, 1,
-                              0, 1, 2 ]
-               }),
-               new fabric.Image.filters.Convolute({        // sharpen
-                   matrix: [  0, -1, 0,
-                           -1, 5, -1,
-                           0, -1, 0 ]
-               }),
-
-               new fabric.Image.filters.Convolute({        // edge enhance
-                   matrix: [  -1, -1, -1,
-                           -1, 9, -1,
-                           -1, -1, -1 ]
-               }),
-               new fabric.Image.filters.Convolute({        // blur
-                   matrix: [  1/9, 1/9, 1/9,
-      1/9, 1/9, 1/9,
-      1/9, 1/9, 1/9 ]
-               })
-           ];
-
-var canvas = new fabric.Canvas('canvas2');
-
-fabric.Image.fromURL('/images/test2.png', function (oImg) {
-    canvas.add(oImg);
-    canvas.centerObject(oImg);
-    canvas.renderAll();
-  }, {"scaleX": 0.50, "scaleY": 0.50});
-
-$(function() {
-    $('.convolutionFilters').on("change", "input", function () {
-        var isChecked = $(this).prop("checked"),
-            filter = $(this).data("filter"),
-            obj = canvas.getObjects()[0];
-        obj.filters[filter] = isChecked ? convolutionFilters[filter] : null;
-        obj.applyFilters(function () {
-            canvas.renderAll();
-        });
-    });
-});*/
-
-
-</script>

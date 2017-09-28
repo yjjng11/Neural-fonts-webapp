@@ -10,47 +10,52 @@
     <script>
       var intervalObj;
       $(document).ready(function() {
-         $('#uploadForm').on('submit',function(e) {
+        $('#uploadForm').on('submit',function(e) {
            e.preventDefault();
-           $("#status").empty().text("Files are being uploaded...");
+
+           // Begin uploading (this will start entire training)
            $(this).ajaxSubmit({
-              type:"POST",
+             url:'/train', 
+             type:"POST",
+              data:'startTrain',
               error: function(xhr) {
-                status('Error: ' + xhr.status);
+                $("#status").empty().text('Error: ' + xhr.status);
               },
               success: function(response) {
-                if (response.success) {
-                  $("#status").empty().text("File upload complete");
-                  var count=0;
-                  intervalObj = window.setInterval(function() {
-                    $.ajax({
-                      url:'/progress',
-                      type:"POST",
-                      data:"progress check",
-                      error: function(xhr) { status('Error: ' + xhr.status);},
-                      success: function(response) {
-                        let pgr = response.progress;
-                        if (pgr == "complete") {
-                          clearInterval(intervalObj);
-                          $("#pgBar").attr('style', 'width: 100%');
-                          $.ajax({
-                            url:'/adjust',
-                            type:"GET",
-                            dataType:"html",
-                            success: function(data) {
-                              window.location.href='/adjust';
-                            }
-                          });
-                        }
-                        else {
-                          $("#pgBar").attr('style', 'width:' + pgr +'%');
-                        }
-                      }
-                    });
-                  }, 100);
+                if (response.doing_training) {
+                  console.log('Already doing training'); 
                 }
+                else
+                  console.log('Start DNN training');
               }
            });
+           
+           // Progress checker (check progress every 1 sec)
+           intervalObj = window.setInterval(function() {
+             $.ajax({
+               url:'/progress',
+               type:"POST",
+               data:"progress check",
+               error: function(xhr) { $("#status").empty().text('Error: ' + xhr.status);},
+               success: function(response) {
+                  $("#pgBar").attr('style', 'width: ' + response.progress + '%');
+                  $("#status").empty().text(response.progress_msg);
+
+                 if (response.progress == 100) {
+                 // stop checking progress
+                  clearInterval(intervalObj);
+                  $.ajax({
+                    url:'/adjust',
+                    type:"GET",
+                    dataType:"html",
+                    success: function(data) {
+                      window.location.href='/adjust';
+                    }
+                  });
+                 }
+                }
+             });
+           }, 1000);
            return false;
         });
       });

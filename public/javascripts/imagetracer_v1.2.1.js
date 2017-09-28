@@ -1043,6 +1043,12 @@ function ImageTracer(){
 		return context.getImageData(0,0,canvas.width,canvas.height);
 	},
 
+		// Helper function: getting ImageData from a canvas
+	this.getPartialImgdata = function(canvas, offset_x, offset_y, width, height){
+		var context = canvas.getContext('2d');
+		return context.getImageData(offset_x, offset_y, width, height);
+	},
+
 	// Special palette to use with drawlayers()
 	this.specpalette = [
 		{r:0,g:0,b:0,a:255}, {r:128,g:128,b:128,a:255}, {r:0,g:0,b:128,a:255}, {r:64,g:64,b:128,a:255},

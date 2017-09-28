@@ -76,7 +76,7 @@ footer { background-color: #F5F5F5; }
 }
 #test_generate{
 	font-size: 25px;
-		font-weight: 600;
+	font-weight: 600;
 }
 #main_contents{
   width: 100%;
@@ -98,7 +98,6 @@ footer { background-color: #F5F5F5; }
 	margin-right: 40px;
   display: inline-block;
   text-align: left;
-  clear: both;
 }
 
 #content_2{
@@ -108,7 +107,6 @@ footer { background-color: #F5F5F5; }
 }
 
 #upload{
-  margin-bottom: 40px;
 	font-size: 25px;
 	font-weight: 600;
 }
@@ -123,20 +121,20 @@ p{
 #pre_image{
   display: inline-block;
   border: 1px solid #BABABA;
-  height:250px;
-  width: 350px;
-  margin-top: 20px;
+  height:480px;
+  width: 400px;
+  margin-top: 30px;
   text-align: center;
   padding-top: 30px;
 	background-color: #FFFFFF;
 
 }
 #post_image{
-  margin-top: 84px;
   display: inline-block;
   border: 1px solid #BABABA;
-  height:250px;
-  width: 350px;
+  height:480px;
+  width: 400px;
+  margin-top: 30px;
   text-align: center;
   padding-top: 30px;
 	background-color: #FFFFFF;
