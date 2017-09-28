@@ -99,7 +99,17 @@ Then Neural fonts web app will be available at: localhost:3000 (or your.server.i
 We used GAN architecture from zi2zi, an open source project which aims at learning Chinese character style with conditional GAN.
 We changed zi2zi to support Korean character sets and generate font file (ttf). Also, we changed some designs to reduce training time.
 See release notes in our submodule ([neural-fonts](https://github.com/periannath/neural-fonts/releases)) to take a closer look on the differences between zi2zi and Neural fonts web app.
+
 * [zi2zi](https://github.com/kaonashi-tyc/zi2zi) by [kaonashi-tyc](https://github.com/kaonashi-tyc)
+
+And we used many other open source projects.
+
+* [imagetracerjs](https://github.com/jankovicsandras/imagetracerjs) by [jankovicsandras](https://github.com/jankovicsandras/imagetracerjs)
+* [svgicons2svgfont](https://github.com/nfroidure/svgicons2svgfont) by [nfroidure](https://github.com/nfroidure)
+* [svg2ttf](https://github.com/fontello/svg2ttf) by [fontello](https://github.com/fontello)
+* [express](https://github.com/expressjs/express) by [expressjs](https://github.com/expressjs)
+* [bootswatch](https://github.com/thomaspark/bootswatch) by [thomaspark](https://github.com/thomaspark)
+
 
 License
 -----
