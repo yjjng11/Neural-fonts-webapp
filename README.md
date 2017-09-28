@@ -107,7 +107,6 @@ And we used many other open source projects.
 * [imagetracerjs](https://github.com/jankovicsandras/imagetracerjs) by [jankovicsandras](https://github.com/jankovicsandras/imagetracerjs)
 * [svgicons2svgfont](https://github.com/nfroidure/svgicons2svgfont) by [nfroidure](https://github.com/nfroidure)
 * [svg2ttf](https://github.com/fontello/svg2ttf) by [fontello](https://github.com/fontello)
-* [express](https://github.com/expressjs/express) by [expressjs](https://github.com/expressjs)
 * [bootswatch](https://github.com/thomaspark/bootswatch) by [thomaspark](https://github.com/thomaspark)
 
 
