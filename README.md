@@ -46,15 +46,24 @@ Neural fonts web app 을 수행하기 위해서는 먼저 tensorflow가 설치�
 ### Installation
 -----
 1. Install Node.js
-2. Install NPM, if necessary
-3. Install NPM packages
+2. Install NPM
+3. Install docker ce (reference : https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
+4. Install nvidia-docker and nvidia-docker plugin (reference : https://github.com/NVIDIA/nvidia-docker/wiki)
+
+5. Clone our project 'Neural-fonts-webapp'
 
 ```bash
-$ npm install
+$ git clone https://github.com/yjjng11/Neural-fonts-webapp.git
+$ npm install (in the cloned directory)
+$ git submodule init
+$ git submodule update
 ```
 
-4. Install docker ce (reference : https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
-5. Install nvidia-docker and nvidia-docker plugin (reference : https://github.com/NVIDIA/nvidia-docker/wiki)
+6. Run our install script (this will download pre-trained baseline model and place it in the right place)
+
+```bash
+$ ./install-pretrained-model.sh
+```
 
 ### Execution
 -----
