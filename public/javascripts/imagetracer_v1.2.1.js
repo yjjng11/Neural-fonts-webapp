@@ -897,7 +897,7 @@ function ImageTracer(){
 
 	// Convert color object to SVG color string
 	this.tosvgcolorstr = function(c, options){
-		if(c.r >= 250 && c.g >= 250 && c.b >= 250)
+		if(c.r >= 150 && c.g >= 150 && c.b >= 150)
 			return null
 		else {
 			return 'fill="rgb('+c.r+','+c.g+','+c.b+')" stroke="rgb('+c.r+','+c.g+','+c.b+')" stroke-width="'+options.strokewidth+'" opacity="'+c.a/255.0+'" ';

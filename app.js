@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var generate = require('./routes/generate');
+//var generate = require('./routes/generate');
 
 var app = express();
 
@@ -21,9 +21,11 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:50000}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'neural-fonts')));
+
 
 app.use('/', index);
-app.use('/generate', generate);
+//app.use('/generate', generate);
 
 
 // catch 404 and forward to error handler

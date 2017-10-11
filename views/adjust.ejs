@@ -2,6 +2,23 @@
 <html>
   <head>
   <% include ../views/partials/head %>
+
+ <script>
+
+  var sources = [ '/<%= root_dir %>/result/<%= files[0] %>',
+  '/<%= root_dir %>/result/<%= files[1] %>',
+  '/<%= root_dir %>/result/<%= files[2] %>',
+  '/<%= root_dir %>/result/<%= files[3] %>',
+  '/<%= root_dir %>/result/<%= files[4] %>',
+  '/<%= root_dir %>/result/<%= files[5] %>',
+  '/<%= root_dir %>/result/<%= files[6] %>',
+  '/<%= root_dir %>/result/<%= files[7] %>',
+  '/<%= root_dir %>/result/<%= files[8] %>' ];
+
+
+ </script>
+
+
   <script src="/javascripts/script.js"></script>
   <script src="/javascripts/imagetracer_v1.2.1.js"></script>
   </head>
@@ -58,13 +75,14 @@
               </div>
 
               <div id="download_div">
-              <p id="download">Download</p>
-              <a class="btn btn-default" href='/download_ttf'>
-                <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
-                </a>
+		<h3>Convert</h3>
+	      <button class="btn btn-default btn-lg" id='convert_button'  >Start</button>
+		<a href='/download_ttf' id='download_button' class="btn btn-default btn-lg" style="display: none;">download</a>
+
               </div>
         </div>
 
   <% include ../views/partials/footer %>
   </body>
+
 </html>
