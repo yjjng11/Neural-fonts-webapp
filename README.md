@@ -62,7 +62,7 @@ $ git submodule update
 6. Run our install script (this will download pre-trained baseline model and place it in the right place)
 
 ```bash
-$ ./install-pretrained-model.sh
+$ ./install.sh
 ```
 
 ### Execution
