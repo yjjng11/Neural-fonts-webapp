@@ -64,20 +64,26 @@ $ git submodule update
 ```bash
 $ ./install.sh
 ```
+7. Download our docker image from docker hub (the docker image will be used during execution)
+
+```bash
+$ docker pull jinevening/neural-font
+```
 
 ### Execution
 -----
-1. Run tensorflow docker and install some necessary libraries on the docker container
+1. Create a docker container running in the background using our docker image
+
 ```bash
-$ nvidia-docker run -v /path/to/neural-fonts:/home/neural-fonts -w /home/neural-fonts --name neural_font -dit gcr.io/tensorflow/tensorflow:latest-gpu bash
-$ docker exec -it neural_font pip install imageio
-$ docker exec -it neural_font pip install scikit-image
+$ nvidia-docker run -v /path/to/neural-fonts:/home/neural-fonts -w /home/neural-fonts --name neural_font -dit jinevening/neural-font:latest bash
 ```
 
 2. Run Neural fonts web app
+
 ```bash
 $ node app.js
 ```
+
 Then Neural fonts web app will be available at: localhost:3000 (or your.server.ip:3000)
 
 ### In web page
