@@ -9,14 +9,9 @@ var fontStream = svgicons2svgfont({
   fontName: 'myfont'
 });
 var ImageTracer = require('../public/javascripts/imagetracer_v1.2.1');
-var PNGReader = require('../public/javascripts/PNGReader');
 var PNG = require('pngjs').PNG;
 
 var files;
-
-   // root_dir = 'Wed11Oct201702_19_32GMT';
-   // files = fs.readdirSync(__dirname + '/../neural-fonts/Wed11Oct201702_19_32GMT/result/');
-
 
 router.post("/generate", function(req, res){
 
@@ -27,9 +22,6 @@ router.post("/generate", function(req, res){
   var fileName=[];
   var syncCheck = 0;
   console.log(root_dir);
-
-
-
 
   for(var i=0; i<files.length; i++) {
         sources[i] = '0x' + files[i].substring(9,13);
@@ -60,11 +52,11 @@ router.post("/generate", function(req, res){
               .on('finish',function() {
 	
 		var ttf = svg2ttf(fs.readFileSync( './svg_fonts/font_ss.svg', 'utf8'), {});
-                fs.writeFileSync('./ttf_fonts/myfont2.ttf', new Buffer(ttf.buffer));
+                fs.writeFileSync('./ttf_fonts/myfont.ttf', new Buffer(ttf.buffer));
 
                 res.send({result:'success'});
 
-        //      var file = __dirname + '/../ttf_fonts/myfont2.ttf';
+        //      var file = __dirname + '/../ttf_fonts/myfont.ttf';
         //      res.download(file);
 
               })
@@ -206,7 +198,7 @@ router.get('/download_template', function(req, res){
 });
 
 router.get('/download_ttf', function(req, res){
-  var file = __dirname + '/../ttf_fonts/myfont2.ttf';
+  var file = __dirname + '/../ttf_fonts/myfont.ttf';
   res.download(file);
 });
 
