@@ -51,10 +51,10 @@ function createOS2Table(font) {
   buf.writeUint8(font.panose.midline); // panose.bMidline
   buf.writeUint8(font.panose.xHeight); // panose.bXHeight
   // TODO: This field is used to specify the Unicode blocks or ranges based on the 'cmap' table.
-  buf.writeUint32(56); // ulUnicodeRange1
-  buf.writeUint32(56); // ulUnicodeRange2
-  buf.writeUint32(56); // ulUnicodeRange3
-  buf.writeUint32(56); // ulUnicodeRange4
+  buf.writeUint32(0); // ulUnicodeRange1
+  buf.writeUint32((1 << 20) + (1 << 24)); // ulUnicodeRange2
+  buf.writeUint32(0); // ulUnicodeRange3
+  buf.writeUint32(0); // ulUnicodeRange4
   buf.writeUint32(identifier('PfEd')); // achVendID, equal to PfEd
   buf.writeUint16(font.fsSelection); // fsSelection
   buf.writeUint16(getFirstCharIndex(font)); // usFirstCharIndex
