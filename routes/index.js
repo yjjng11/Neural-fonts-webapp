@@ -13,14 +13,23 @@ var PNG = require('pngjs').PNG;
 
 var files;
 
+router.get("/load", function(req, res){
+  result_dir = fs.readdirSync(__dirname + '/../neural-fonts/').filter(function(name){return name.includes('GMT')});
+  res.render('load', {'result_dir':result_dir});
+});
+
+router.post('/set_root',function(req,res){
+  root_dir = req.body.root_dir;
+  files = fs.readdirSync(__dirname + '/../neural-fonts/'+root_dir+'/result/');
+  res.json({});
+});
+
 router.post("/generate", function(req, res){
 
   //var root_dir = req.body.root_dir;
   var option = req.body.options;
-  var svgstring = [];
   var sources=[];
   var fileName=[];
-  var syncCheck = 0;
   console.log(root_dir);
 
   for(var i=0; i<files.length; i++) {
@@ -29,7 +38,6 @@ router.post("/generate", function(req, res){
         //console.log('\u0000'.substring(0,2));
 
         }
-
   for(var i=0; i<files.length; i++) {
         let j = i;
 
@@ -38,27 +46,19 @@ router.post("/generate", function(req, res){
         var png = PNG.sync.read(data);
 
 	 var myImageData = {width:128, height:128, data:png.data};
-         var options = {ltres:option.ltres, strokewidth:option.strokewidth, qtres:option.qtres, pathomit:option.pathomit, blurradius:option.blurradius, blurdelta:option.blurdelta };
+         var options = {ltres:option.ltres, strokewidth:option.strokewidth, qtres:option.qtres, pathomit:option.pathomit, blurradius:option.blurradius, blurdelta:option.blurdelta};
+	options.pal = [{r:0,g:0,b:0,a:255},{r:255,g:255,b:255,a:255}];
+	options.linefilter=true;
 
-         options.pal = [{r:0,g:0,b:0,a:255},{r:255,g:255,b:255,a:255}];
-         options.linefilter=true;
-         svgstring[j] = ImageTracer.imagedataToSVG( myImageData, options);
-         fs.writeFileSync('./svg/' + fileName[j] + '.svg',svgstring[j]);
-         syncCheck++;
-
+         let svgstring = ImageTracer.imagedataToSVG( myImageData, options);
+         fs.writeFileSync('./svg/' + fileName[j] + '.svg',svgstring);
 	}
 
             fontStream.pipe(fs.createWriteStream( './svg_fonts/font_ss.svg'))
               .on('finish',function() {
-	
-		var ttf = svg2ttf(fs.readFileSync( './svg_fonts/font_ss.svg', 'utf8'), {});
+                var ttf = svg2ttf(fs.readFileSync( './svg_fonts/font_ss.svg', 'utf8'), {});
                 fs.writeFileSync('./ttf_fonts/myfont.ttf', new Buffer(ttf.buffer));
-
                 res.send({result:'success'});
-
-        //      var file = __dirname + '/../ttf_fonts/myfont.ttf';
-        //      res.download(file);
-
               })
               .on('error',function(err) {
                 console.log(err);
@@ -74,7 +74,6 @@ router.post("/generate", function(req, res){
               fontStream.write(glyph1);
             }
             fontStream.end();
-
 
 
 });

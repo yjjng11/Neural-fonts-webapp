@@ -1,3 +1,4 @@
 uploads/
 baseline/
 node_modules/
+svg/*.svg

@@ -860,7 +860,7 @@ function ImageTracer(){
 
 		// SVG start
 		var svgstr = '<svg '+viewboxorviewport+'version="1.1" xmlns="http://www.w3.org/2000/svg" ' +
-						'desc="Created with imagetracer.js version '+_this.versionnumber+'" >';
+						'desc="" >';
 
 		// Drawing: Layers and Paths loops
 		for(var lcnt=0; lcnt < tracedata.layers.length; lcnt++){

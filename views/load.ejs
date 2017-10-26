@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../views/partials/head %>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+	<script>
+		var result_dir = <%- JSON.stringify(result_dir) %>;
+		$(document).ready(function() {
+			for (var i = 0; i < result_dir.length; i++) {
+				$('#select').append('<option>' + result_dir[i] + '</option>');
+			}
+			$('#btn_submit').on('click', function(e) {
+				var index = $('#select').prop('selectedIndex');
+				var root_dir = result_dir[index];
+				$.ajax({
+				   url:'/set_root',
+				   type:"POST",
+				   data:{'root_dir':root_dir},
+				   error: function(xhr) { $("#status").empty().text('Error: ' + xhr.status);},
+				   success: function(response) {
+					$.ajax({
+					  url:'/adjust',
+					  type:"GET",
+					  dataType:"html",
+					  success: function(data) {
+						window.location.href='/adjust';
+					  }
+					});
+				   }
+				});
+			});
+		});
+	</script>
+  </head>
+  <body>
+    <% include ../views/partials/nav %>
+
+    <script>
+    </script>
+
+    <div id="upload_container">
+		<div class="container" id="upload_top" style="padding-top: 70px">
+		  <div class="row">
+			<div class="col-lg-12">
+			  <h2 style="font-size: 40px">Select a previous work</h2>
+			</div>
+		  </div>
+		</div>
+		<div class="container" style="padding-top: 70px" width="250px">
+		  <div class="row" width="250px">
+			<center><select id="select" multiple="" class="form-control" width="250px">
+			</select></center>
+		  </div>
+			<center><button id="btn_submit" type="submit" class="btn btn-primary">Submit</button></center>
+		</div>
+    </div>
+    <% include ../views/partials/footer %>
+  </body>
+  </html>
