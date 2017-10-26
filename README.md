@@ -92,7 +92,7 @@ Then Neural fonts web app will be available at: localhost:3000 (or your.server.i
 
 2. 시작하기 버튼을 클릭하고 준비한 파일을 업로드 합니다.
 
-	- 대표 글자 템플릿은 3장으로 되어 있습니다. 첫째 장은 1-uniform.png, 둘째 장은 2-uniform.png, 셋째 장은 3-uniform.png 로 이름을 저장해서 업로드 해야 합니다.
+	- 대표 글자 템플릿은 3장으로 되어 있습니다. 첫째 장은 1-uniform.png, 둘째 장은 2-uniform.png, 셋째 장은 3-uniform.png 로 이름을 저장해서 업로드 해야 합니다. (Note: 업로드 하는 파일은 글자가 있는 영역만 포함해야 합니다.)
 	
 3. Neural fonts 는 업로드된 한글 디자인을 학습합니다. 이 과정은 한글 디자인을 흉내내는 인공신경망이 학습되는 과정으로, Titan X GPU 를 가진 서버에서 대략 30분 가량 소모됩니다.
 
