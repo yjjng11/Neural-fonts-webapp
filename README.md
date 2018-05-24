@@ -4,6 +4,8 @@
 ---
 Neural fonts web app 은 한글 폰트 제작의 어려움을 덜기 위해, 사용자가 대표 글자 양식을 업로드 하면 그 글자의 디자인을 학습하여 다른 글자들의 이미지를 생성해주는 소프트웨어 입니다.
 
+다음 링크에서 demo를 보실 수 있습니다.(https://youtu.be/E29ia7or2_U)
+
 <p align="center">
   <img src="public/images/intro.png" width="600"/>
 </p>
